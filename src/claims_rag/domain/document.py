@@ -7,7 +7,7 @@ class Document(BaseModel):
     source_path: Path
     content: str
     category: str
-    metadata: dict[str, str] = Field(default_factory=dict)
+    metadata: dict[str, str] = Field(default_factory=dict) # Metadata gives the evidence context
 
 
 class DocumentChunk(BaseModel):

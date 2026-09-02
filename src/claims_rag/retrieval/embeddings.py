@@ -1,6 +1,5 @@
 import re
-from collections import Counter
-
+from collections import Counter # dictionary that tracks how many times each token occurs
 
 def embed(text: str) -> Counter[str]:
     """Dependency-free token representation; swap for an embedding provider in production."""

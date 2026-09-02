@@ -10,5 +10,9 @@ class InMemoryVectorStore:
         self.chunks.extend(chunks)
 
     def search(self, query: str, limit: int = 5) -> list[DocumentChunk]:
-        ranked = sorted(self.chunks, key=lambda chunk: score(query, chunk), reverse=True)
+        ranked = sorted(
+            self.chunks, 
+            key=lambda chunk: score(query, chunk), 
+            reverse=True
+        )
         return [chunk for chunk in ranked[:limit] if score(query, chunk) > 0]
